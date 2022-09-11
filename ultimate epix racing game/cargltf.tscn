@@ -271,6 +271,7 @@ surfaces/2 = {
 
 [node name="cargltf" type="VehicleBody"]
 gravity_scale = 2.0
+steering = 5.0
 script = ExtResource( 10 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -292,6 +293,7 @@ material/7 = null
 
 [node name="wheelFR" type="VehicleWheel" parent="."]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.670054, -0.1875, 1.14479 )
+steering = 5.0
 use_as_steering = true
 wheel_radius = 0.4
 suspension_travel = 2.0
@@ -322,6 +324,7 @@ material/2 = null
 
 [node name="wheenFlL" type="VehicleWheel" parent="."]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.670054, -0.1875, 1.14479 )
+steering = 5.0
 use_as_steering = true
 wheel_radius = 0.4
 suspension_travel = 2.0
@@ -351,4 +354,4 @@ material/1 = null
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0290644, 1.26465, -3.61599 )
+transform = Transform( -0.728072, 0, -0.685501, 0, 1, 0, 0.685501, 0, -0.728072, -4.94489, 1.26465, -3.61599 )
