@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://cargltf.tscn" type="PackedScene" id=2]
@@ -8,6 +8,32 @@
 flags_world_triplanar = true
 albedo_texture = ExtResource( 1 )
 uv1_triplanar = true
+
+[sub_resource type="ProceduralSky" id=4]
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 4 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+fog_enabled = true
+fog_color = Color( 0.694118, 0.694118, 0.686275, 1 )
+fog_sun_color = Color( 0.976471, 0.65098, 0, 1 )
+fog_sun_amount = 1.0
+fog_depth_begin = 1.9
+fog_depth_end = 70.6
+fog_depth_curve = 0.933033
+fog_transmit_curve = 1.31951
+tonemap_mode = 2
+tonemap_white = 2.34
+auto_exposure_scale = 0.41
+dof_blur_far_distance = 9.11
+glow_enabled = true
+glow_intensity = 0.2
+glow_strength = 1.01
+glow_blend_mode = 1
+glow_hdr_scale = 0.2
+adjustment_brightness = 1.19
+adjustment_saturation = 1.47
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 3 )
@@ -21,4 +47,11 @@ material = SubResource( 1 )
 
 [node name="cargltf" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3091, -32.4447 )
-script = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="."]
+transform = Transform( -0.00815065, 0, -5.77381, 0, 1, 0, 0.999967, 0, -0.0470619, 0.0752616, 0.077995, 15.2298 )
+use_collision = true
+polygon = PoolVector2Array( -9.43142, 0.0643786, 5.65395, 3.2983, 5.67267, -0.0257581 )

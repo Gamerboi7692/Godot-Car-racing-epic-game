@@ -269,67 +269,91 @@ surfaces/2 = {
 }
 
 [node name="cargltf" type="VehicleBody"]
-gravity_scale = 2.0
+mass = 39.4296
+gravity_scale = 3.8
 steering = 5.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.3, 0, 0, 0, 0.254265, 0, 0, 0, 1.7856, 0, 0, 0 )
+transform = Transform( 0.3, 0, 0, 0, 0.254265, 0, 0, 0, 1.7856, 0, 0.355862, 0 )
 visible = false
 shape = SubResource( 6 )
 
 [node name="Chassis" type="MeshInstance" parent="."]
-transform = Transform( 0.3, 0, 0, 0, 0.254265, 0, 0, 0, 1.7856, 0, 0, 0 )
+transform = Transform( 0.3, 0, 0, 0, 0.254265, 0, 0, 0, 1.7856, 0, 0.355862, 0 )
 mesh = SubResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
 
 [node name="wheelFR" type="VehicleWheel" parent="."]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.670054, -0.1875, 1.14479 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.670054, 0.168362, 1.14479 )
 steering = 5.0
 use_as_steering = true
 wheel_radius = 0.4
-suspension_travel = 2.0
-suspension_stiffness = 100.0
+suspension_stiffness = 150.0
 
 [node name="Cube001" type="MeshInstance" parent="wheelFR"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="wheenBL" type="VehicleWheel" parent="."]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.670055, -0.159406, -0.922618 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.670055, 0.196456, -0.922618 )
 use_as_traction = true
 wheel_radius = 0.4
-suspension_travel = 2.0
-suspension_stiffness = 100.0
+suspension_stiffness = 150.0
 
 [node name="Cube002" type="MeshInstance" parent="wheenBL"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="wheenFlL" type="VehicleWheel" parent="."]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.670054, -0.1875, 1.14479 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.670054, 0.168362, 1.14479 )
 steering = 5.0
 use_as_steering = true
 wheel_radius = 0.4
-suspension_travel = 2.0
-suspension_stiffness = 100.0
+suspension_stiffness = 150.0
 
 [node name="Cube004" type="MeshInstance" parent="wheenFlL"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="wheelBR" type="VehicleWheel" parent="."]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.670055, -0.159406, -0.922618 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.670055, 0.196456, -0.922618 )
 use_as_traction = true
 wheel_radius = 0.4
-suspension_travel = 2.0
-suspension_stiffness = 100.0
+suspension_stiffness = 150.0
 
 [node name="Cube005" type="MeshInstance" parent="wheelBR"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 mesh = SubResource( 5 )
 skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.728072, 0, -0.685501, 0, 1, 0, 0.685501, 0, -0.728072, -4.94489, 1.26465, -3.61599 )
+[node name="Camera2" type="Camera" parent="."]
+transform = Transform( -0.995991, 0, 0.0894509, 0, 1, 0, -0.0894509, 0, -0.995991, 0.35, 0.769862, -0.079 )
+
+[node name="SpringArm" type="SpringArm" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.76954, 0 )
+spring_length = 5.0
+
+[node name="Camera" type="ClippedCamera" parent="SpringArm"]
+current = true
